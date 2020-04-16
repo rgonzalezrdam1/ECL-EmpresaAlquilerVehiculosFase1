@@ -1,8 +1,6 @@
+package modelo;
 
 import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
 
 /**
  * La clase guarda en una colección List (un ArrayList) la flota de vehículos
@@ -29,8 +27,10 @@ public class AgenciaAlquiler {
 	 * añade un nuevo vehículo solo si no existe
 	 * 
 	 */
-	public void addVehiculo() {
-
+	public void addVehiculo(Vehiculo v) {
+		if (!flota.contains(v)) {
+			flota.add(v);
+		}
 	}
 
 	/**
@@ -45,9 +45,21 @@ public class AgenciaAlquiler {
 	 * Asumimos todos los datos correctos. Puede haber espacios antes y después
 	 * de cada dato
 	 */
-	private Vehiculo obtenerVehiculo() {
+	private Vehiculo obtenerVehiculo(String linea) {
 
-		return null;
+		/**String[] aux = linea.split(",");
+		String[] datos = new String[aux.length];
+		for (int i = 0; i < aux.length; i++) {
+			datos[i] = aux[i].trim();
+		}
+		
+		if (datos[0].equalsIgnoreCase("C")) {
+			return new Coche(datos[1], datos[2], datos[3],
+					Double.parseDouble(datos[4]), Integer.parseInt(datos[5]));
+		}else {
+			return new Furgoneta(datos[1], datos[2], datos[3],
+					Double.parseDouble(datos[4]), Double.parseDouble(datos[5]));
+		}*/
 	}
 
 	/**
