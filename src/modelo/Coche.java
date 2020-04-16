@@ -30,6 +30,7 @@ private int nPlazas;
 	}
 	
 	public String toString() {
-		return "\nCOCHE\n" + super.toString() + "  |  Plazas: " + nPlazas + "\n";
+		return "\nCOCHE\n" + super.toString() + "  |  Plazas: " + nPlazas + 
+				"\n";
 	}
 }
