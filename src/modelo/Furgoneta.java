@@ -14,28 +14,28 @@ package modelo;
  * 
  */
 public class Furgoneta {
-	private double volumenCarga;
+	private double Carga;
     
     public Furgoneta(String matricula, String marca, String modelo,
-            double precioDia, double volumenCarga) {
+            double precioDia, double Carga) {
         super(matricula, marca, modelo, precioDia);
-        this.volumenCarga = volumenCarga;
+        this.Carga = Carga;
     }
     
     public double getVolumenCarga() {
-        return volumenCarga;
+        return Carga;
     }
 
-    public void setVolumenCarga(double volumenCarga) {
-        this.volumenCarga = volumenCarga;
+    public void setVolumenCarga(double Carga) {
+        this.Carga = Carga;
     }
 
     public double calcularPrecioAlquiler(int dias) {
         double precio = super.getPrecioDia() * dias;
-        if(volumenCarga < 5) {
+        if(Carga < 5) {
             precio += 10;
         }
-        else if(volumenCarga > 10) {
+        else if(Carga > 10) {
             precio += 25;
         }
         else {
@@ -44,6 +44,6 @@ public class Furgoneta {
         return precio;
     }
     public String toString() {
-        return "\nFURGONETA\n" + super.toString() + "  |  Volumen: " + volumenCarga + " (m3)" + "\n";
+        return "\nFURGONETA\n" + super.toString() + "  |  Volumen: " + Carga + " (m3)" + "\n";
     }
 }

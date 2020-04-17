@@ -100,15 +100,8 @@ public class Vehiculo {
 		{
 			return false;
 		}
-		Vehiculo v = (Vehiculo) obj;
-		return v.getMatricula().equals(this.getMatricula());
-	}
-	/**
-	 * Redefinición del criterio natural de comparación
-	 */
-	@Override
-	public int compareTo(Vehiculo o) {
-		return this.getMatricula().compareTo(o.getMatricula());
+		Vehiculo ve = (Vehiculo) obj;
+		return ve.getMatricula().equals(this.getMatricula());
 	}
 
 	/**
@@ -119,7 +112,15 @@ public class Vehiculo {
 	public int hashCode() {
 		return matricula.hashCode() * 13;
 	}
-
+	
+	@Override
+	public String toString() {
+		return this.getClas().toUpperCase() +
+				"\nMatrícula: " + this.getMatricula() +
+				"\nMarca: " + this.getMarca()+
+				"\nMarca: " + this.getMarca() +
+				"\nModelo: " + this.getModelo() +
+				"\nPrecio día alquiler: " + this.getPrecioDia() + "€";
 	
 	
 }
